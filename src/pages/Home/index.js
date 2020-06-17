@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import api from "../../services/api";
-import chuck from "../../assets/images/chuck.png";
 import Loader from "../../components/Loader";
 
 import { Container } from "./styles";
@@ -20,10 +19,8 @@ export default function Home() {
 
   return (
     <Container>
-      <h2>Chuck Norris Lero Lero</h2>
-      <img src={chuck} alt="Chuck Norris" />
-
-      {loading ? <Loader /> : <> {phrase} </>}
+      <h1>Chuck Norris Lero Lero</h1>
+      <div className="card">{loading ? <Loader /> : <> {phrase} </>}</div>
 
       <button onClick={loadLerolero}>Generate</button>
     </Container>
