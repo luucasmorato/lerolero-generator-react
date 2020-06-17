@@ -1,26 +1,31 @@
-import React, {useState} from 'react';
-import api from '../../services/api';
-import chuck from '../../assets/images/chuck.png';
+import React, { useState } from "react";
+import api from "../../services/api";
+import chuck from "../../assets/images/chuck.png";
+import Loader from "../../components/Loader";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
 export default function Home() {
+  const [phrase, setPhrase] = useState("");
+  const [loading, setLoading] = useState(false);
 
-    const [phrase, setPhrase] = useState('');
+  async function loadLerolero() {
+    setLoading(true);
 
-    async function loadLerolero() {
-      const response = await api.get();
-      setPhrase(response.data.value);
-    }
+    const response = await api.get();
+    setPhrase(response.data.value);
+
+    setLoading(false);
+  }
 
   return (
     <Container>
-        <h2>Chuck Norris Lero Lero</h2>
-        <img src={chuck} alt="Chuck Norris"/>
+      <h2>Chuck Norris Lero Lero</h2>
+      <img src={chuck} alt="Chuck Norris" />
 
-        {phrase}
-        
-        <button onClick={loadLerolero}>Generate</button>
+      {loading ? <Loader /> : <> {phrase} </>}
+
+      <button onClick={loadLerolero}>Generate</button>
     </Container>
   );
 }

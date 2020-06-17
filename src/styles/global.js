@@ -1,5 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
-import background from '../assets/images/background.svg';
+import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
@@ -11,7 +10,7 @@ export default createGlobalStyle`
     font-family: Roboto, sans-serif;
   }
   body {
-    background: #191827 url(${background}) no-repeat center top;
+    background: #191827;
     -webkit-font-smoothing: antialiased !important;
   }
 
@@ -31,4 +30,4 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-`; 
+`;
