@@ -1,4 +1,4 @@
-#Lero lero generator
+# Lero lero generator
 
 ## Available Scripts
 In the project directory, you can run:
